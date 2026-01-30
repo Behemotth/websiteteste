@@ -2,68 +2,85 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>CodeQuest - Aprenda Web Jogando</title>
+  <title>CodeQuest — Aprenda Programação Web</title>
+
+  <meta name="description" content="Plataforma educacional gamificada para aprender HTML, CSS e JavaScript do zero." />
 
   <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <script defer src="js/levels.js"></script>
-  <script defer src="js/validator.js"></script>
+  <script defer src="js/data/lessons.js"></script>
+  <script defer src="js/engine/ui.js"></script>
+  <script defer src="js/engine/validator.js"></script>
+  <script defer src="js/engine/progress.js"></script>
+  <script defer src="js/engine/preview.js"></script>
   <script defer src="js/app.js"></script>
 </head>
 
 <body>
   <header>
     <h1>🎮 CodeQuest</h1>
-    <p>Aprenda HTML, CSS e JavaScript como um jogo</p>
+    <p>Aprendizado real. Código real. Evolução real.</p>
   </header>
 
-  <nav class="tabs">
-    <button class="tab active" data-tab="home">Início</button>
-    <button class="tab" data-tab="levels">Níveis</button>
-    <button class="tab" data-tab="editor">Editor</button>
-    <button class="tab" data-tab="about">Sobre</button>
+  <nav>
+    <button data-view="map">Mapa</button>
+    <button data-view="lesson">Lição</button>
+    <button data-view="editor">Editor</button>
+    <button data-view="progress">Progresso</button>
   </nav>
 
   <main>
-    <!-- INÍCIO -->
-    <section id="home" class="tab-content active">
-      <h2>Bem-vindo, Aventureiro!</h2>
-      <p>
-        Aqui você aprenderá a criar sites do zero usando HTML, CSS e JavaScript.
-        Cada fase é um desafio.
-      </p>
-    </section>
+    <section id="map"></section>
+    <section id="lesson"></section>
+<section id="editor" class="active">
+  <div class="card">
+    <h2>Editor de Código</h2>
+    <p>
+      Escreva seu código abaixo e veja o resultado imediatamente.
+      Teste, erre, ajuste — é assim que se aprende.
+    </p>
+  </div>
 
-    <!-- NÍVEIS -->
-    <section id="levels" class="tab-content">
-      <h2>Mapa de Níveis</h2>
-      <div id="levelsContainer"></div>
-    </section>
+  <div class="editor-grid">
 
-    <!-- EDITOR -->
-    <section id="editor" class="tab-content">
-      <h2>Editor de Código</h2>
+    <div class="editor-panel">
+      <h3>HTML</h3>
+      <textarea id="htmlInput">
+<h1>Olá, CodeQuest</h1>
+<p>Aprender programar é uma jornada.</p>
+      </textarea>
 
-      <textarea id="codeInput" placeholder="Digite seu código aqui..."></textarea>
+      <h3>CSS</h3>
+      <textarea id="cssInput">
+body {
+  font-family: Arial;
+  background: #111;
+  color: #0f0;
+}
+      </textarea>
 
-      <button id="validateBtn">Validar Código</button>
+      <h3>JavaScript</h3>
+      <textarea id="jsInput">
+console.log("Editor ativo");
+      </textarea>
 
-      <pre id="output"></pre>
-    </section>
+      <button id="runCode">Executar Código</button>
+    </div>
 
-    <!-- SOBRE -->
-    <section id="about" class="tab-content">
-      <h2>Sobre o Projeto</h2>
-      <p>
-        CodeQuest é um projeto open source criado para ensinar programação web
-        de forma acessível e divertida.
-      </p>
-    </section>
+    <div class="preview-panel">
+      <h3>Preview ao Vivo</h3>
+      <iframe id="preview"></iframe>
+    </div>
+
+  </div>
+</section>
+    <section id="progress"></section>
   </main>
 
   <footer>
-    <p>© 2026 - CodeQuest</p>
+    <p>© CodeQuest — Open Source</p>
   </footer>
 </body>
 </html>

@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 10px;
-  background: #f2ff04;
+  background: #ff3604;
   padding: 11px;
 }
 
@@ -25,7 +25,8 @@ nav button {
   color: var(--primary);
   border: 1px solid var(--primary);
   padding: 8px 16px;
-  cursor: pointer;
+  cursor: pointer; 
+  hover { color:rgb(132, 0, 255);};
 }
 
 section {

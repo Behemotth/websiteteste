@@ -26,6 +26,8 @@ nav button {
   border: 1px solid var(--primary);
   padding: 8px 16px;
   cursor: pointer;
+  link:hover { color:orange;}
+
 }
 
 section {
